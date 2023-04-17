@@ -1,0 +1,32 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+Home:
+    path: /
+    controller: App\Controller\SiteController::Home
+
+cadastroPessoa:
+    path: /cadastro/pessoa
+    controller: App\Controller\SiteController::cadastroPessoa
+
+alterarPessoa:
+    path: /usuario/editar/{idpessoa}
+    controller: App\Controller\SiteController::alterarPessoa
+
+excluirPessoa:
+    path: /usuario/{idpessoa}/excluir
+    controller: App\Controller\SiteController::excluirPessoa
+
+
+
+cadastroContato:
+    path: /cadastro/contato
+    controller: App\Controller\SiteController::cadastroContato
+
+pesquisaPessoa:
+    path: /usuario/pesquisar
+    controller: App\Controller\SiteController::pesquisar
+
+
+

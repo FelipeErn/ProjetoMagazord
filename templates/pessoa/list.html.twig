@@ -1,0 +1,47 @@
+<table>
+    <h2>Lista de pessoas</h2>
+    <hr>
+    <tbody>
+    {% for pessoa in idpessoa %}
+        <tr>
+            <td>ID:</td>
+            <td>{{ pessoa.idpessoa }}</td>
+            <td>| Nome:</td>
+            <td>{{ pessoa.nome }}</td>
+            <td>| CPF:</td>
+            <td>{{ pessoa.cpf }}</td>
+            <td>
+                <a href="{{ path('excluirPessoa', {'idpessoa': pessoa.idpessoa}) }}">Excluir</a>
+                <a href="{{ path('alterarPessoa', {'idpessoa': pessoa.idpessoa}) }}">Alterar</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr>
+<div>
+    <a href="{{ path('cadastroPessoa') }}"><button type="button">Cadastrar Pessoa</button></a>
+    <br>  <br>
+</div>
+
+
+{% block page %}
+    {% include 'includes/flashes.html.twig' %}
+
+    <!--
+        <form action="{{ path('pesquisaPessoa') }}" method="post">
+            <input type="text" name="nome">
+            <input type="submit">
+        </form>
+
+
+         <div class="box-search">
+           <button onclick="searchData()" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+                <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
+            </button>
+         </div>
+        -->
+{% endblock %}

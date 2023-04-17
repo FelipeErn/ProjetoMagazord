@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% block content %}
+
+        {% if idpessoa is not empty %}
+
+            <h3>Resultado da pesquisa:</h3>
+            <ul>
+                {% for pessoa in idpessoa %}
+                    <li>{{ pessoa.idpessoa }}</li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+    {% endblock %}
+
+{% endblock %}

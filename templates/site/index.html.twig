@@ -1,0 +1,27 @@
+{% extends 'site/template.html.twig' %}
+
+{% block body %}
+    {% block page %}
+        {% include 'includes/flashes.html.twig' %}
+        {{ form_start(form) }}
+
+        {{ form_row(form.nome) }}
+
+        <br>
+
+        {{ form_label(form.cpf) }}
+        {{ form_widget(form.cpf) }}
+        {{ form_errors(form.cpf) }}
+
+        <hr>
+        <br>
+
+        <button type="submit">Cadastrar</button>
+
+        <p>
+            <a href="{{ path('Home') }}"><button type="button">Home</button></a>
+        </p>
+
+        {{ form_end(form) }}
+    {% endblock %}
+{% endblock %}

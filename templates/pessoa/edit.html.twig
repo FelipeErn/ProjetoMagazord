@@ -1,0 +1,23 @@
+{% include 'includes/flashes.html.twig' %}
+
+{% block body %}
+        <h2>Editar Pessoa</h2>
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.nome) }}
+        <br>
+
+        {{ form_widget(form) }}
+        <br>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        {{ form_end(form) }}
+        <hr>
+        <p>
+                <a href="{{ path('Home') }}"><button type="button">Home</button></a>
+        </p>
+        <hr>
+        <h2>Pessoa Atual</h2>
+        <p>ID: {{ idpessoa.idpessoa }}</p>
+        <p>Nome: {{ idpessoa.nome }}</p>
+{% endblock %}
